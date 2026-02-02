@@ -39,10 +39,7 @@ The sensor was placed on a flat, stationary surface without any motion input
 ### LED Pin Configuration Investigation
 The ADNS-3080 sensor's LED pin was intentionally left floating, assuming the internal LED would be sufficient. When power issues were suspected, the LED pin was connected to the Arduino VCC pin to force LED activation.
 
-- **Attempted fix:** LED pin connected directly to VCC, but there was no change in behavior at all.
-
-Conclusion:
-Connecting the LED pin to VCC did not resolve the issue. The sensor's internal LED operates correctly when adequate power is supplied.
+**Results:** Connecting the LED pin directly to VCC did not resolve the issue. There was no change in behaviour no matter the LED pin. The sensor's internal LED operates correctly when adequate power is supplied.
 
 ### Hardware Power Issue Investigation
 
