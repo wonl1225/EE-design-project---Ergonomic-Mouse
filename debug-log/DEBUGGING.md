@@ -50,21 +50,28 @@ When power issue was resolved via breadboard:
 - Attempted fixes: resolution changes, LED force-on, exposure adjustment
 **Results:** Motion tracking remained unstable regardless of configuration, suggesting either focus/height calibration issues or motion accumulation code errors.
 
-**Current Status**
+### Current Status
 Possible causes identified so far:
 1. PCB VCC trace prevents sensor power delivery (hardware issue)
-2. Motion tracking algorithm produces drift even with valid sensor data (software issue)
-3. Low SQUAL values suggest optical focus may be out of spec
+2. Software issues with motion tracking
+3. Possible optical focus problems
 
 PINOUT:
+
 VCC → 5V (try jumper wires)
+
 GND → GND (try jumper wires)
+
 NCS → D10
+
 MOSI → D16
+
 MISO → D14
+
 SCLK → D15
+
 RST → 3.3V (10k resistor)
+
 NPO → left floating
+
 LED → left floating
-
-
