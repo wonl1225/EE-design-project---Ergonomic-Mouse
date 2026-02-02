@@ -47,7 +47,7 @@ The PCB was tested for proper power delivery to the ADNS-3080 sensor.
 When power issue was resolved via breadboard:
 - SQUAL values were 0, indicating poor surface detection
 - Cursor drift persisted with random directional movement
-- Attempted fixes: resolution changes, LED force-on, exposure adjustment
+
 **Results:** Motion tracking remained unstable regardless of configuration, suggesting either focus/height calibration issues or motion accumulation code errors.
 
 ### Current Status
