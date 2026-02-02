@@ -35,3 +35,36 @@ Every non-essential subsystems (rotary encoder and button input code) were remov
 The sensor was placed on a flat, stationary surface without any motion input
 
 **Results:** The cursor remained at the center with minor movements. This suggests that the main issue is mainly related to motion handling rather than noise or circuit instability. 
+
+
+### Hardware Power Issue Investigation
+
+The PCB was tested for proper power delivery to the ADNS-3080 sensor.
+
+**Results:** The sensor LED did not illuminate when connected via PCB, indicating a VCC trace issue. When tested on breadboard with direct 5V/GND connections with jumper wires, the sensor powered on successfully indicated by the LED and Product ID (0x17) was verified. This confirms a hardware power delivery fault in the PCB design.
+
+### Motion Tracking Behavior (Breadboard)
+When power issue was resolved via breadboard:
+- SQUAL values were 0, indicating poor surface detection
+- Cursor drift persisted with random directional movement
+- Attempted fixes: resolution changes, LED force-on, exposure adjustment
+**Results:** Motion tracking remained unstable regardless of configuration, suggesting either focus/height calibration issues or motion accumulation code errors.
+
+**Current Status**
+Possible causes identified so far:
+1. PCB VCC trace prevents sensor power delivery (hardware issue)
+2. Motion tracking algorithm produces drift even with valid sensor data (software issue)
+3. Low SQUAL values suggest optical focus may be out of spec
+
+PINOUT:
+VCC → 5V (try jumper wires)
+GND → GND (try jumper wires)
+NCS → D10
+MOSI → D16
+MISO → D14
+SCLK → D15
+RST → 3.3V (10k resistor)
+NPO → left floating
+LED → left floating
+
+
